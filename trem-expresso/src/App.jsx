@@ -1,19 +1,15 @@
-import { useState } from "react";
-import CoffeeProduct from "./components/CoffeeProduct";
-import NavBar from "./components/NavBar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
-		<>
-			<NavBar></NavBar>
-			<CoffeeProduct
-				name={"Lorem"}
-				desc={"Ipsum"}
-				content={"aodnaoia"}
-				align={"left"}></CoffeeProduct>
-		</>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/">
+					<Route index element={<Home />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
 	);
 }
 
