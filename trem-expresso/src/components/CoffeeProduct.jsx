@@ -1,6 +1,6 @@
 import React from "react";
 
-function CoffeeProduct({name, desc, content, align}) {
+function CoffeeProduct({ name, desc, content, align }) {
 	return (
 		<div>
 			{/* <img></img> */}
