@@ -1,6 +1,6 @@
 
 import React from "react";
-import TremExpressoImg from "../../public/TremExpresso.jpg";
+import TremExpressoImg from "../assets/TremExpresso.jpg";
 
 function NavBar() {
     return (
