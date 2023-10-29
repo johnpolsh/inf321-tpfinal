@@ -1,4 +1,4 @@
-import DefaultLayout from "../Layouts/Default";
+import DefaultLayout from "../layouts/Default";
 import Banner from "../components/Banner";
 import CoffeeProduct from "../components/CoffeeProduct";
 import TremExpressoImg1 from "../assets/TremExpresso.jpg";

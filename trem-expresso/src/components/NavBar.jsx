@@ -39,7 +39,8 @@ function NavBar() {
 						href="#"
 						role="button"
 						data-bs-toggle="dropdown"
-						aria-expanded="false">
+						aria-expanded="false"
+                        aria-haspopup="true">
 						<FontAwesomeIcon icon={faUser} />
 					</a>
 					<div className="dropdown-menu dropdown-menu-start">
