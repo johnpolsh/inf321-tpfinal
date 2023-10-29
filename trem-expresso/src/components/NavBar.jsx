@@ -23,12 +23,13 @@ function NavBar() {
 							className="form-control"
 							type="search"
 							placeholder="Pesquisar"
-                            style={{width: "320px"}}
+							style={{ width: "320px" }}
 						/>
 						<button
 							id="searchBtn"
 							className="input-group-text bg-transparent"
-							type="button">
+							type="button"
+						>
 							<FontAwesomeIcon icon={faSearch} />
 						</button>
 					</div>
@@ -40,14 +41,16 @@ function NavBar() {
 						role="button"
 						data-bs-toggle="dropdown"
 						aria-expanded="false"
-                        aria-haspopup="true">
+						aria-haspopup="true"
+					>
 						<FontAwesomeIcon icon={faUser} />
 					</a>
 					<div className="dropdown-menu dropdown-menu-start">
 						<form
 							className="form-horizontal"
 							method="post"
-							acceptCharset="utf-8">
+							acceptCharset="utf-8"
+						>
 							<input
 								className="form-control login"
 								type="text"
