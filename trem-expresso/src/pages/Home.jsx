@@ -15,7 +15,7 @@ function Home() {
 						TremExpressoImg1,
 						TremExpressoImg2,
 						TremExpressoImg3,
-						TremExpressoImg4,
+						TremExpressoImg4
 					]}></Banner>
 				<CoffeeProduct
 					name={"Lorem"}
