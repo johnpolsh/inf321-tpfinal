@@ -1,10 +1,22 @@
 import DefaultLayout from "../Layouts/Default";
+import Banner from "../components/Banner";
 import CoffeeProduct from "../components/CoffeeProduct";
+import TremExpressoImg1 from "../assets/TremExpresso.jpg";
+import TremExpressoImg2 from "../assets/TremExpresso2.jpg";
+import TremExpressoImg3 from "../assets/TremExpresso3.jpg";
+import TremExpressoImg4 from "../assets/TremExpresso4.jpg";
 
 function Home() {
 	return (
 		<>
 			<DefaultLayout>
+				<Banner
+					images={[
+						TremExpressoImg1,
+						TremExpressoImg2,
+						TremExpressoImg3,
+						TremExpressoImg4,
+					]}></Banner>
 				<CoffeeProduct
 					name={"Lorem"}
 					desc={"Neque porro quisquam est qui dolorem ipsum"}

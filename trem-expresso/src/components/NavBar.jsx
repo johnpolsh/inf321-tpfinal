@@ -20,21 +20,21 @@ function NavBar() {
 					</Link>
 				</div>
 				<form className="d-flex w-50" role="search">
-					<input
-						className="form-control"
-						type="text"
-						placeholder="Search"
-					/>
-					<button
-						className="btn btn-light"
-						type="submit"
-						style={{ margin: "0 10px" }}>
-						<FontAwesomeIcon icon={faSearch} />
-					</button>
+					<div className="input-group my-2">
+						<input
+							className="form-control"
+							type="search"
+							placeholder="Pesquisar"
+						/>
+						<button
+							id="searchBtn"
+							className="input-group-text bg-transparent"
+							type="button">
+							<FontAwesomeIcon icon={faSearch} />
+						</button>
+					</div>
 				</form>
-                <div>
-                    Login
-                </div>
+				<div>Login</div>
 			</div>
 		</nav>
 	);
