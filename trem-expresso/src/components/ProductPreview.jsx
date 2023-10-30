@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { faStarHalf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function ProductPreview({ name, desc, price, img }) {
 	return (
-		<div className="card p-3 mt-2" style={{ width: "300px" }}>
+		<div className="card p-3 mt-2" style={{ width: "320px" }}>
 			<Link to="/">
 				<img src={img} className="card-img-top" alt={name} />
 			</Link>
@@ -14,20 +13,20 @@ function ProductPreview({ name, desc, price, img }) {
 				<p className="card-text">{desc}</p>
 				<h4 className="product-price">R${price}</h4>
 
-				<ul class="list-inline small">
-					<li class="list-inline-item active m-0">
+				<ul className="list-inline small">
+					<li className="list-inline-item active m-0">
 						<FontAwesomeIcon icon={faStar} ></FontAwesomeIcon>
 					</li>
-					<li class="list-inline-item active m-0">
+					<li className="list-inline-item active m-0">
 						<FontAwesomeIcon icon={faStar}  ></FontAwesomeIcon>
 					</li>
-					<li class="list-inline-item active m-0">
+					<li className="list-inline-item active m-0">
 						<FontAwesomeIcon icon={faStar} ></FontAwesomeIcon>
 					</li>
-					<li class="list-inline-item active m-0">
+					<li className="list-inline-item active m-0">
 						<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
 					</li>
-                    <li class="list-inline-item m-0">
+                    <li className="list-inline-item m-0">
 						<FontAwesomeIcon  icon={faStar} ></FontAwesomeIcon>
 					</li>
 				</ul>

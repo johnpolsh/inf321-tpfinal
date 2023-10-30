@@ -1,5 +1,7 @@
+import { faInstagram, faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import TremExpressoImg from "../assets/TremExpresso.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Footer() {
 	return (
@@ -31,14 +33,37 @@ function Footer() {
 				<div className="col-6 col-lg-2">
 					<h5>Contatos</h5>
 					<ul className="list">
-						<li className="my-1">Github</li>
-						<li className="my-1">Instagram</li>
-						<li className="my-1">Youtube</li>
+						<li className="my-1">
+							<a
+								href="https://github.com/johnpolsh/inf321-tpfinal"
+								rel="noreferrer"
+								target="_blank">
+								<FontAwesomeIcon icon={faGithub} />
+							</a>
+						</li>
+						<li className="my-1">
+							<a
+								href="https://instagram.com"
+								rel="noreferrer"
+								target="_blank">
+								<FontAwesomeIcon icon={faInstagram} />
+							</a>
+						</li>
+						<li className="my-1">
+							<a
+								href="https://youtube.com"
+								rel="noreferrer"
+								target="_blank">
+								<FontAwesomeIcon icon={faYoutube} />
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
 			<div className="container">
-				<p className="text-center">Copyright &copy; 2023 - Trem Expresso Cafés</p>
+				<p className="text-center">
+					Copyright &copy; 2023 - Trem Expresso Cafés
+				</p>
 			</div>
 		</footer>
 	);

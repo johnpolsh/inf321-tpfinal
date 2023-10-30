@@ -17,6 +17,10 @@ function NavBar() {
 						Trem Expresso cafés
 					</span>
 				</Link>
+                <Link className="nav-item" to="/shop">
+					Nossa loja
+				</Link>
+                {/* TODO: remover */}
 				<form className="d-flex" role="search">
 					<div className="input-group my-2">
 						<input
