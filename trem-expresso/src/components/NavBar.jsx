@@ -1,7 +1,7 @@
-import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import TremExpressoImg from "../assets/TremExpresso.jpg";
+// import TremExpressoImg from "../assets/TremExpresso.jpg";
 
 function NavBar() {
 	return (
@@ -13,9 +13,9 @@ function NavBar() {
 						alt="Trem Expresso imagem"
 						style={{ width: "48px", height: "auto" }}
 					/> */}
-                    <h2>Trem Expresso cafés</h2>
+                    <h3>Trem Expresso Cafés</h3>
 				</Link>
-                <Link className="nav-item" to="/shop">
+                <Link className="text-decoration-none nav-item" to="/shop">
 					Nossa loja
 				</Link>
 				<div className="nav-item dropdown me-5">

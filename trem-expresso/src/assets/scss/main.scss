@@ -12,14 +12,12 @@ $edward: #9ea2a1;
 $coffee-pot: #2b1200;
 $tangerine: #cf5c00;
 $red-orange: #8d1e00;
-$raw-sienna: #d5764f;
+$raw-sienna: #a84720;
 $mule-fawn: #89592e;
 $mimosa: #f1d26c;
 $chartreuse: #aba600;
 $apple: #65b039;
 $green: #2f7604;
-
-$blockquote-footer-color: $rock;
 
 @import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
@@ -66,63 +64,116 @@ $blockquote-footer-color: $rock;
 
 body {
 	font-family: "Libre Baskerville" !important;
-    line-height: 30px;
-    letter-spacing: 0;
+	line-height: 30px;
+	letter-spacing: 0;
 }
 
 $heading-font-family: "Nixie One" !important;
+$heading-font-weight: 600;
+$heading-letter-spacing: 0.2rem;
 
 h1 {
-    @extend h1;
-    font-family: $heading-font-family;
+	@extend h1;
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	letter-spacing: $heading-letter-spacing;
 }
 
 h2 {
-    @extend h2;
-    font-family: $heading-font-family;
+	@extend h2;
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	letter-spacing: $heading-letter-spacing;
 }
 
 h3 {
-    @extend h3;
-    font-family: $heading-font-family;
+	@extend h3;
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	letter-spacing: $heading-letter-spacing;
 }
 
 h4 {
-    @extend h4;
-    font-family: $heading-font-family;
+	@extend h4;
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	letter-spacing: $heading-letter-spacing;
 }
 
 h5 {
-    @extend h5;
-    font-family: $heading-font-family;
+	@extend h5;
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	letter-spacing: $heading-letter-spacing;
 }
 
 h6 {
-    @extend h6;
-    font-family: $heading-font-family;
+	@extend h6;
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	letter-spacing: $heading-letter-spacing;
 }
 
 .blockquote {
-    font-size: 2.15rem;
-    margin-bottom: 1rem;
+	font-size: 2.15rem;
+	margin-bottom: 1rem;
 }
 
 .blockquote-footer {
-    @extend .blockquote-footer;
-    font-weight: 600;
-}
-
-a.navbar-brand {
-    letter-spacing: 0.1em !important;
+	@extend .blockquote-footer;
+	font-weight: 600;
 }
 
 a {
-    text-decoration: none;
+	@extend a;
+	font-weight: 600;
+}
+
+a.navbar-brand {
+	letter-spacing: 0.1em !important;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+	width: 100px;
+}
+
+.carousel-indicators [data-bs-target] {
+	width: 36px;
+	height: 10px;
+	border-radius: 5px;
+	border: 0;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+}
+
+.coffee-product {
+    @extend .position-relative, .m-5;
+}
+
+.coffee-figure-info {
+    @extend .p-4;
+    border: 0;
+    border-radius: 18px;
+}
+
+@include media-breakpoint-up(sm) {
+    .coffee-figure-info {
+        margin-right: 12em;
+    }
+}
+
+#ourProducts > h2 {
+	color: #{$apple};
+    border: 0;
+    border-bottom: 2px;
+    border-color: #{$apple};
+    border-style: dashed;
 }
 
 [data-bs-theme="espresso"] {
-	--bs-body-color: #{tint-color($tangerine, 20%)};
-	--bs-body-color-rgb: #{to-rgb($edward)};
+	--bs-body-color: #{tint-color($raw-sienna, 20%)};
+	--bs-body-color-rgb: #{to-rgb($raw-sienna)};
 	--bs-body-bg: #{$dune};
 	--bs-body-bg-rgb: #{to-rgb($dune)};
 
@@ -136,13 +187,44 @@ a {
 	--bs-tertiary-bg: #{tint-color($dune, 4%)};
 	--bs-tertiary-bg-rgb: #{to-rgb(tint-color($dune, 4%))};
 
-	--bs-link-color: #{$raw-sienna};
-	--bs-link-color-rgb: #{to-rgb($raw-sienna)};
+	--bs-link-opacity: 100%;
 	--bs-link-decoration: none;
-	--bs-link-hover-color: #{$chartreuse};
-	--bs-link-hover-color-rgb: #{to-rgb($chartreuse)};
+	--bs-link-color: #{$raw-sienna};
+	--bs-link-color-rgb: #{to-rgb($raw-sienna), 1};
+	--bs-link-hover-color: #{mix($chartreuse, $raw-sienna, 25%)};
+	--bs-link-hover-color-rgb: #{to-rgb(mix($chartreuse, $raw-sienna, 25%))};
 
-    --bs-heading-color: #{$raw-sienna};
+	--bs-heading-color: #{$tangerine};
+	--bs-blockquote-footer-color: #{$rock};
+
+	.carousel-control-next-icon {
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 320 512'%3e%3c!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3e%3cstyle%3e svg %7b fill%3a %23cf5c00 %7d %3c/style%3e%3cpath d='M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z'/%3e%3c/svg%3e");
+	}
+
+	.carousel-control-prev-icon {
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 320 512'%3e%3c!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3e%3cstyle%3e svg %7b fill%3a %23cf5c00 %7d %3c/style%3e%3cpath d='M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z'/%3e%3c/svg%3e");
+	}
+
+	.carousel-indicators [data-bs-target] {
+		background-color: #{$tangerine};
+	}
+
+	.blockquote-footer {
+		color: #{$rock};
+	}
+
+    .coffee-figure-info {
+        background-color: #{rgba($edward, 0.1)};
+    }
+
+	#ourProducts {
+		background: rgb(15, 15, 14);
+		background: linear-gradient(
+			160deg,
+			rgba(15, 15, 14, 1) 30%,
+			rgba(43, 18, 0, 1) 100%
+		);
+	}
 }
 
 // etc
