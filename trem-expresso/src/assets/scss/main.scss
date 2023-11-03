@@ -1,21 +1,165 @@
-@import "bootstrap/scss/bootstrap";
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nixie+One&display=swap");
 
+// Required
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
 
+// Add a custom color to $theme-colors
+$dune: #0f0f0e;
+$rock: #6e5349;
+$edward: #9ea2a1;
+$coffee-pot: #2b1200;
+$tangerine: #cf5c00;
+$red-orange: #8d1e00;
+$raw-sienna: #d5764f;
+$mule-fawn: #89592e;
+$mimosa: #f1d26c;
+$chartreuse: #aba600;
+$apple: #65b039;
+$green: #2f7604;
+
+$blockquote-footer-color: $rock;
+
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// Remainder of Bootstrap imports
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/accordion";
+@import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/progress";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal";
+@import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/carousel";
+@import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/placeholders";
+
+// Helpers
+@import "bootstrap/scss/helpers";
+
+// Utilities
+@import "bootstrap/scss/utilities/api";
+
+body {
+	font-family: "Libre Baskerville" !important;
+    line-height: 30px;
+    letter-spacing: 0;
+}
+
+$heading-font-family: "Nixie One" !important;
+
+h1 {
+    @extend h1;
+    font-family: $heading-font-family;
+}
+
+h2 {
+    @extend h2;
+    font-family: $heading-font-family;
+}
+
+h3 {
+    @extend h3;
+    font-family: $heading-font-family;
+}
+
+h4 {
+    @extend h4;
+    font-family: $heading-font-family;
+}
+
+h5 {
+    @extend h5;
+    font-family: $heading-font-family;
+}
+
+h6 {
+    @extend h6;
+    font-family: $heading-font-family;
+}
+
+.blockquote {
+    font-size: 2.15rem;
+    margin-bottom: 1rem;
+}
+
+.blockquote-footer {
+    @extend .blockquote-footer;
+    font-weight: 600;
+}
+
+a.navbar-brand {
+    letter-spacing: 0.1em !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+[data-bs-theme="espresso"] {
+	--bs-body-color: #{tint-color($tangerine, 20%)};
+	--bs-body-color-rgb: #{to-rgb($edward)};
+	--bs-body-bg: #{$dune};
+	--bs-body-bg-rgb: #{to-rgb($dune)};
+
+	--bs-secondary-color: #{mix($gray-400, $edward, 5%)};
+	--bs-secondary-color-rgb: #{to-rgb(mix($gray-400, $edward, 5%))};
+	--bs-secondary-bg: #{$rock};
+	--bs-secondary-bg-rgb: #{to-rgb($rock)};
+
+	--bs-tertiary-color: #{mix($gray-200, $edward, 50%)};
+	--bs-tertiary-color-rgb: #{to-rgb(mix($gray-200, $edward, 50%))};
+	--bs-tertiary-bg: #{tint-color($dune, 4%)};
+	--bs-tertiary-bg-rgb: #{to-rgb(tint-color($dune, 4%))};
+
+	--bs-link-color: #{$raw-sienna};
+	--bs-link-color-rgb: #{to-rgb($raw-sienna)};
+	--bs-link-decoration: none;
+	--bs-link-hover-color: #{$chartreuse};
+	--bs-link-hover-color-rgb: #{to-rgb($chartreuse)};
+
+    --bs-heading-color: #{$raw-sienna};
+}
+
+// etc
 .card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .1875rem;
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: #fff;
+	background-clip: border-box;
+	border: 1px solid rgba(0, 0, 0, 0.125);
+	border-radius: 0.1875rem;
 }
 
 .list-inline-item.active {
-    color: #a36f3e;
+	color: #a36f3e;
 }

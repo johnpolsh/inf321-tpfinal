@@ -8,17 +8,15 @@ function CoffeeProduct({ name, desc, content, reverse = false }) {
 			}>
 			<img
 				alt="Trem Expresso imagem"
-				// className="img-thumbnail"
 				src={TremExpressoImg}
 				style={{ width: "30%" }}
 			/>
 			<div className="px-2">
-				<h3 className={reverse ? "text-end" : "text-start"}>{name}</h3>
-				{/* TODO: adicionar citação, eg produto recomendado */}
-				<p className={reverse ? "text-end" : "text-start"}>
-					<small className="text-justify">{desc}</small>
-				</p>
-				<p className={reverse ? "text-end" : "text-start"}>{content}</p>
+				<figure className={reverse ? "text-end" : "text-start"}>
+					<blockquote className="blockquote">{name}</blockquote>
+					<figcaption className="blockquote-footer">{desc}</figcaption>
+					<p>{content}</p>
+				</figure>
 			</div>
 		</div>
 	);

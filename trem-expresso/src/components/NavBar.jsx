@@ -8,36 +8,16 @@ function NavBar() {
 		<nav className="navbar navbar-expand-lg">
 			<div className="container-fluid d-flex justify-content-between">
 				<Link className="navbar-brand" to="/">
-					<img
+					{/* <img
 						src={TremExpressoImg}
 						alt="Trem Expresso imagem"
 						style={{ width: "48px", height: "auto" }}
-					/>
-					<span className="fs-5" style={{ margin: "0 10px" }}>
-						Trem Expresso cafés
-					</span>
+					/> */}
+                    <h2>Trem Expresso cafés</h2>
 				</Link>
                 <Link className="nav-item" to="/shop">
 					Nossa loja
 				</Link>
-                {/* TODO: remover */}
-				<form className="d-flex" role="search">
-					<div className="input-group my-2">
-						<input
-							className="form-control"
-							type="search"
-							placeholder="Pesquisar"
-							style={{ width: "320px" }}
-						/>
-						<button
-							id="searchBtn"
-							className="input-group-text bg-transparent"
-							type="button"
-						>
-							<FontAwesomeIcon icon={faSearch} />
-						</button>
-					</div>
-				</form>
 				<div className="nav-item dropdown me-5">
 					<a
 						className="nav-link dropdown-toggle"
