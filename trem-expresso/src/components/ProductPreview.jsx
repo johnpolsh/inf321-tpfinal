@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function ProductPreview({ name, desc, price, img }) {
 	return (
-		<div className="card p-3 mt-2" style={{ width: "320px" }}>
+		<div className="card p-3">
 			<Link to="/">
 				<img src={img} className="card-img-top" alt={name} />
 			</Link>

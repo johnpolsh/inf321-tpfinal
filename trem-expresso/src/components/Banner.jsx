@@ -22,15 +22,15 @@ function Banner({ images }) {
 					}
 				})}
 			</div>
-			<div className="carousel-inner" style={{height: "480px"}}>
+			<div className="carousel-inner" style={{height: "75vh"}}>
 				<div className="carousel-item active">
-					<img src={images[0]} className="d-block w-100" />
+					<img src={images[0]} className="d-block max-w-100 vh-100 mx-auto" />
 				</div>
 				{images.map((img, i) => {
 					if (i > 0) {
 						return (
 							<div key={i} className="carousel-item">
-								<img src={img} className="d-block w-100" />
+								<img src={img} className="d-block max-w-100 vh-100 mx-auto" />
 							</div>
 						);
 					}
