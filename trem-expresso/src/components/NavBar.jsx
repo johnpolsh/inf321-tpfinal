@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
 	return (
-		<nav className="navbar navbar-expand-lg">
+		<nav className="navbar navbar-expand-lg ">
 			<div className="container-fluid d-flex">
 				<Link className="navbar-brand " to="/">
 					{/* <img
@@ -16,11 +16,13 @@ function NavBar() {
 					/> */}
                     <h3>Trem Expresso Cafés</h3>
 				</Link>
+				
 				<div className="nav-item mx-auto">
                 <Link   className="text-decoration-none " to="/shop">
 					Nossa loja
 				</Link>
 				</div>
+			
 				
 				<div className="text-decoration-none nav-item justify-content-right ms-auto">
 				<a
