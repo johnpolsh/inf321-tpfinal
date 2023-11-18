@@ -9,17 +9,14 @@ function SearchBar() {
 			className="d-flex justify-content-end align-items-center"
 			style={{ marginRight: "55px" }}
 		>
-			<div
-				className="input-group"
-				style={{ maxWidth: "350px" }}
-			>
+			<div className="input-group" style={{ maxWidth: "350px", borderColor: "#9e642e"}}>
 				<div className="input-group-append dropdown ">
 					<button
-						className="text-dark btn btn-secondary dropdown-toggle border-0 rounded-0"
+						className="text-dark btn btn-secondary dropdown-toggle rounded-0"
 						type="button"
 						id="categoryDropdown"
 						data-toggle="dropdown"
-						style={{ backgroundColor: "#9e642e" }}
+						style={{ backgroundColor: "#9e642e", borderColor: "#9e642e" }}
 					>
 						Filtros
 					</button>
@@ -27,14 +24,14 @@ function SearchBar() {
 
 				<input
 					type="text"
-					className="form-control"
+					className="form-control input-group-append"
 					placeholder="Pesquisar"
 					aria-label="Pesquisar"
 					aria-describedby="basic-addon2"
 					style={{ borderColor: "#9e642e" }}
 				/>
 				<div
-					className="input-group-append fas fa-search"
+					className="input-group-append"
 					style={{ backgroundColor: "#9e642e" }}
 				>
 					<Link
