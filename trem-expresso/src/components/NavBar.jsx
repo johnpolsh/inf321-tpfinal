@@ -17,14 +17,14 @@ function NavBar() {
                     <h3>Trem Expresso Cafés</h3>
 				</Link>
 				
-				<div className="nav-item mx-auto">
+				<div style={{width: '19%'}}  className="nav-item mx-auto">
                 <Link   className="text-decoration-none " to="/shop">
 					Nossa loja
 				</Link>
 				</div>
 			
 				
-				<div className="text-decoration-none nav-item justify-content-right ms-auto">
+				<div className="text-decoration-none  justify-content-right">
 				<a
 						className="nav-link "
 						href="#"
