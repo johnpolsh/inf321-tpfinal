@@ -44,6 +44,7 @@ function Login() {
 								/>
 							</div>
 
+                            <Link className="text-decoration-none" to="/">
 							<button
 								type="submit"
 								className="mt-3 mb-3 btn btn-primary w-100 btn-lg "
@@ -51,6 +52,7 @@ function Login() {
 							>
 								Entrar
 							</button>
+                            </Link>
 
 							<div className="d-flex mb-5">
 								<div>

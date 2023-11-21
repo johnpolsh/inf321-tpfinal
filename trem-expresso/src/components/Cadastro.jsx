@@ -108,6 +108,7 @@ function Cadastro() {
 								</div>
 							</div>
 
+                            <Link className="text-decoration-none " to='/'>
 							<button
 								type="submit"
 								className="mt-3 mb-3 btn btn-primary w-100 btn-lg "
@@ -115,6 +116,7 @@ function Cadastro() {
 							>
 								Cadastrar
 							</button>
+                            </Link>
 
 							<div className=" text-center">
 								<p className="mb-0" style={{ color: "#000" }}>
