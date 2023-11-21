@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import NoPage from "./pages/NoPage";
-
+import CadastroPage from "./pages/CadastroPage";
 import LoginPage from "./pages/LoginPage";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
 					<Route index element={<Home />} />
 					<Route path="shop" element={<Shop />} />
 					<Route path="login" element={<LoginPage/>}/>
+					<Route path="cadastro" element={<CadastroPage/>}/>
 					<Route path="*" element={<NoPage />} />
 				</Route>
 			</Routes>
