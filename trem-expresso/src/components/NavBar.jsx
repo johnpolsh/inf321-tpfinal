@@ -34,21 +34,24 @@ function NavBar() {
 					<FontAwesomeIcon style={{ marginRight: '20px'}}  icon={faCartShopping} />
 				</a>
 				</div>
-
+				
+				
 				<div className="nav-item dropdown me-5">
+					
 					<a
-						className="nav-link dropdown-toggle"
-						href="#"
-						role="button"
-						data-bs-toggle="dropdown"
-						aria-expanded="false"
-						aria-haspopup="true"
+						// className="nav-link dropdown-toggle"
+						// href="#"
+						// role="button"
+						// data-bs-toggle="dropdown"
+						// aria-expanded="false"
+						// aria-haspopup="true"
 					>	
-						
+						<Link to="/login">
 						<FontAwesomeIcon icon={faUser} />
+						</Link>
 						
 					</a>
-					<div className="dropdown-menu dropdown-menu-end">
+					{/* <div className="dropdown-menu dropdown-menu-end">
 						<form
 							className="form-horizontal"
 							method="post"
@@ -62,9 +65,10 @@ function NavBar() {
 							/>
 						</form>
 						
-					</div>
+					</div> */}
 					
 				</div>
+				
 				
 			</div>
 		</nav>
