@@ -16,38 +16,38 @@ app.use(cors());
 const port = 3000;
 
 const [db] = await Promise.all([
-    open({
-        filename: join(__dirname, databaseDir, "database.sqlite"),
-        driver: sqlite3.cached.Database,
-        callback: (e) => {
-            console.log(e);
-        },
-    }),
+	open({
+		filename: join(__dirname, databaseDir, "database.sqlite"),
+		driver: sqlite3.cached.Database,
+		callback: (e) => {
+			console.log(e);
+		},
+	}),
 ]);
 
 // TODO: close
 async function closeDatabase(db) {
-    await db.close();
+	await db.close();
 }
 
 db.on("connect", (data) => {
-    console.log(data);
+	console.log(`new db connection: ${data}`);
 });
 
 db.on("trace", (data) => {
-    console.log(data);
+	console.log(`new querty: ${data}`);
 });
 
-async function quertyProdList( ) {
-    return await db.all("SELECT * FROM prodList");
+async function quertyProdList() {
+	console.log("querty product list from db");
+	return await db.all("SELECT * FROM prodList");
 }
 
 app.get("/prodList", async (req, res) => {
-    console.log(`requisition recived on '/prodList' from: ${req}`);
-    await quertyProdList().then(result => {
-        console.log(`result ${result}`);
-        res.json(result);
-    });
+	console.log(`requisition recived on '/prodList' from: ${req.baseUrl}`);
+	await quertyProdList().then((result) => {
+		res.json(result);
+	});
 });
 
 app.listen(port, () => {

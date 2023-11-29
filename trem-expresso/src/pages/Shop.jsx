@@ -21,8 +21,8 @@ function Shop() {
 		fetch("http://localhost:3000/prodList")
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(`received: ${data}`);
-				setProductList(Array.from(data));
+				console.log("received data:", data);
+				setProductList(data);
 			})
 			.catch((error) => {
 				console.error(`error: ${error}`);
