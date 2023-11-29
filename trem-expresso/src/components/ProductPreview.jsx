@@ -10,24 +10,24 @@ function ProductPreview({ name, desc, price, img }) {
 			</Link>
 			<div className="card-body text-dark">
 				<h4 className="card-title">{name}</h4>
-				<p className="card-text">{desc}</p>
-				<h4 className="product-price">R${price}</h4>
+				<p className="card-text text-truncate">{desc}</p>
+				<h4 className="product-price">R$ {price}</h4>
 
 				<ul className="list-inline small">
 					<li className="list-inline-item active m-0">
-						<FontAwesomeIcon icon={faStar} ></FontAwesomeIcon>
-					</li>
-					<li className="list-inline-item active m-0">
-						<FontAwesomeIcon icon={faStar}  ></FontAwesomeIcon>
-					</li>
-					<li className="list-inline-item active m-0">
-						<FontAwesomeIcon icon={faStar} ></FontAwesomeIcon>
+						<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
 					</li>
 					<li className="list-inline-item active m-0">
 						<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
 					</li>
-                    <li className="list-inline-item m-0">
-						<FontAwesomeIcon  icon={faStar} ></FontAwesomeIcon>
+					<li className="list-inline-item active m-0">
+						<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+					</li>
+					<li className="list-inline-item active m-0">
+						<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+					</li>
+					<li className="list-inline-item m-0">
+						<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
 					</li>
 				</ul>
 			</div>
@@ -36,6 +36,5 @@ function ProductPreview({ name, desc, price, img }) {
 		</div>
 	);
 }
-
 
 export default ProductPreview;
