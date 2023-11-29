@@ -1,6 +1,6 @@
 function Banner({ images }) {
 	return (
-		<div id="banner-liquour" className="carousel slide" data-bs-ride="carousel">
+		<div id="banner-liquour" className="carousel slide" data-bs-ride="carousel" style={{background: "linear-gradient(0deg, rgba(15, 15, 14, 1) 0%, rgba(43, 18, 0, 1) 40%)"}}>
 			<div className="carousel-indicators">
 				<button
 					type="button"

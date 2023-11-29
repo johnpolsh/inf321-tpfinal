@@ -1,28 +1,49 @@
 import ProductPreview from "../components/ProductPreview";
 import TremExpressoimg from "../assets/TremExpresso.jpg";
 import DefaultLayout from "../layouts/Default";
-import SearchBar from "../components/SearchBar";	
-import { useState } from "react";
+import SearchBar from "../components/SearchBar";
+import { useEffect, useState } from "react";
+
+const prodDummy = {
+	id: 1,
+	name: "Café expresso",
+	price: 3.25,
+	amount: 98,
+	desc: "Um sobor sublime",
+	img: "dummyimg.jpg",
+};
 
 function Shop() {
 	// TODO: from json
-	const [productList, setProductList] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+	const [productList, setProductList] = useState([prodDummy]);
+
+	useEffect(() => {
+		fetch("http://localhost:3000/prodList")
+			.then((response) => response.json())
+			.then((data) => {
+				console.log(`received: ${data}`);
+				setProductList(Array.from(data));
+			})
+			.catch((error) => {
+				console.error(`error: ${error}`);
+			});
+	}, []);
 
 	return (
 		<>
 			<DefaultLayout>
 				<SearchBar></SearchBar>
-                {/* TODO: barra de pesquisa e filtros */}
 				<div className="container-fluid">
-					<div className="m-auto row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+					<div className="m-auto row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 						{productList.map((el, i) => {
 							return (
 								<div className="p-3" key={i}>
+                                    {/* TODO: fazer descrição limitada para duas linhas */}
 									<ProductPreview
-										name="Cafe"
-										desc="dasd"
-										price="2312"
-										img={TremExpressoimg}></ProductPreview>
+										name={el.name}
+										desc={el.desc}
+										price={el.price}
+										img={el.img}></ProductPreview>
 								</div>
 							);
 						})}
