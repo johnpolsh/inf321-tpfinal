@@ -38,12 +38,11 @@ function Shop() {
 						{productList.map((el, i) => {
 							return (
 								<div className="p-3" key={i}>
-                                    {/* TODO: fazer descrição limitada para duas linhas */}
 									<ProductPreview
 										name={el.name}
 										desc={el.desc}
 										price={el.price}
-										img={el.img}></ProductPreview>
+										img={el.img} />
 								</div>
 							);
 						})}

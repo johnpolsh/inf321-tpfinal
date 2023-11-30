@@ -20,7 +20,7 @@ const [db] = await Promise.all([
 		filename: join(__dirname, databaseDir, "database.sqlite"),
 		driver: sqlite3.cached.Database,
 		callback: (e) => {
-			console.log(e);
+			console.error(`database opening error: ${e}`);
 		},
 	}),
 ]);
@@ -31,11 +31,11 @@ async function closeDatabase(db) {
 }
 
 db.on("connect", (data) => {
-	console.log(`new db connection: ${data}`);
+	console.info(`new db connection: ${data}`);
 });
 
 db.on("trace", (data) => {
-	console.log(`new querty: ${data}`);
+	console.info(`new querty: ${data}`);
 });
 
 async function quertyProdList() {
@@ -44,10 +44,8 @@ async function quertyProdList() {
 }
 
 app.get("/prodList", async (req, res) => {
-	console.log(`requisition recived on '/prodList' from: ${req.baseUrl}`);
-	await quertyProdList().then((result) => {
-		res.json(result);
-	});
+	console.log(`requisition recived on '/prodList' from: ${req.socket.remoteAddress}`);
+	await quertyProdList().then((result) => res.json(result));
 });
 
 app.listen(port, () => {
