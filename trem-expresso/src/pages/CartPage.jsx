@@ -1,8 +1,10 @@
-import Cart from "../components/Cart";
+import CartItem from "../components/CartItem";
 import TremExpressoimg from "../assets/TremExpresso.jpg";
 function CartPage() {
 	return (
-		<Cart/>
+		<CartItem name={"Cafe Italiano"} type={"Cafe Arabico"} img={TremExpressoimg} weight={500} discount={10} price={100}
+            
+        />
 	);
 }
 

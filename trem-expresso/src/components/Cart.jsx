@@ -1,7 +1,7 @@
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import TremExpressoimg from "../assets/TremExpresso.jpg";
 
-function Cart() {
+function CartItem() {
 	return (
 		<div className="mt-3">
 			<div className="container pb-5 mb-2">
