@@ -1,8 +1,11 @@
+import ProductPage from "../components/ProductPage";
 
-export default function ProdPage() {
+function ProdPage() {
 
     
     return (
-
+        <ProductPage></ProductPage>
     );
 }
+
+export default ProdPage;
