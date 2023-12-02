@@ -1,5 +1,4 @@
 import ProductPreview from "../components/ProductPreview";
-import TremExpressoimg from "../assets/TremExpresso.jpg";
 import DefaultLayout from "../layouts/Default";
 import SearchBar from "../components/SearchBar";
 import { useEffect, useState } from "react";

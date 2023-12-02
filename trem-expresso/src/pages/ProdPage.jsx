@@ -1,10 +1,10 @@
-import ProductPage from "../components/ProductPage";
+import ProductInfo from "../components/ProductInfo";
 
-function ProdPage() {
-
-    
+function ProdPage() {    
     return (
-        <ProductPage></ProductPage>
+        <div>
+            <ProductInfo name={"Café"} price={100} discount={12} rate={5} />
+        </div>
     );
 }
 
