@@ -7,9 +7,12 @@ import DefaultLayout from "../layouts/Default";
 
 function CartPage() {
 	return (
-		<div>
-			{/* <DefaultLayout> */}
+		<div >
+			<DefaultLayout>
+				<div className="p-3">
 				<CartHeader />
+				</div>
+				<div className="p-3">
 				<CartItem
 					name={"Cafe Italiano"}
 					type={"Cafe Arabico"}
@@ -19,6 +22,8 @@ function CartPage() {
 					price={100.0}
 					maxCount={230}
 				/>
+				</div>
+				<div className="p-3">
 				<CartItem
 					name={"Cafe Italiano"}
 					type={"Cafe Arabico"}
@@ -28,8 +33,11 @@ function CartPage() {
 					price={100.0}
 					maxCount={230}
 				/>
+				</div>
+				<div className="p-3">
 				<CartFooter price={1200.59} />
-			{/* </DefaultLayout> */}
+				</div>
+			</DefaultLayout>
 		</div>
 	);
 }
