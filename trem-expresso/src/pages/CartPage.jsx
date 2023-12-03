@@ -22,7 +22,7 @@ function CartPage() {
 			price={100.0}
 			maxCount={230}
 		/>
-		<CartFooter/>
+		<CartFooter price={1000}/>
 		</div>
 		
 	);
