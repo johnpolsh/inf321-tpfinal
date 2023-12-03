@@ -1,9 +1,12 @@
 import CartItem from "../components/CartItem";
 import CartFooter from "../components/CartFooter";
+import CartHeader from "../components/CartHeader";
 import TremExpressoimg from "../assets/TremExpresso.jpg";
+
 function CartPage() {
 	return (
 		<div>
+		<CartHeader/>
 		<CartItem
 			name={"Cafe Italiano"}
 			type={"Cafe Arabico"}
