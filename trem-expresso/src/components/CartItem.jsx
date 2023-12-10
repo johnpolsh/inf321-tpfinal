@@ -17,7 +17,7 @@ function CartItem({
 }) {
 
 	const [buyCount, setBuyCount] = useState(qtd);
-	const [payingPrice, setPayingPrice] = useState(price);
+	const [payingPrice, setPayingPrice] = useState(price * qtd);
 
 	function incBuyCount() {
 		if (buyCount < maxCount) {
