@@ -11,10 +11,16 @@ function Cadastro() {
 							src={TremExpressoimg}
 							alt="Trem Expresso"
 							className="img-fluid rounded-start"
+							style={{ height: "100%", width: "100%", objectFit: "cover" }}
 						/>
 					</div>
 					<div className="col-md-6 p-4 bg-light rounded-end">
-						<h1 className="logintext mb-2  text-center">CADASTRE-SE</h1>
+						<h1
+							className="logintext mb-2 text-center"
+							style={{ fontSize: "2rem" }}
+						>
+							CADASTRE-SE
+						</h1>
 
 						<form>
 							<div className="mb-2 mt-3">
@@ -65,7 +71,7 @@ function Cadastro() {
 										className="form-control"
 										id="inputCEP"
 										style={{ backgroundColor: "white" }}
-                                        pattern="[0-9]*"
+										pattern="[0-9]*"
 									/>
 								</div>
 								<div className="col">
@@ -91,7 +97,7 @@ function Cadastro() {
 										className="form-control"
 										id="inputCelular"
 										style={{ backgroundColor: "white" }}
-                                        pattern="[0-9]*"
+										pattern="[0-9]*"
 									/>
 								</div>
 								<div className="col">
@@ -103,20 +109,20 @@ function Cadastro() {
 										className="form-control"
 										id="inputCPF"
 										style={{ backgroundColor: "white" }}
-                                        pattern="[0-9]*"
+										pattern="[0-9]*"
 									/>
 								</div>
 							</div>
 
-                            <Link className="text-decoration-none " to='/'>
-							<button
-								type="submit"
-								className="mt-3 mb-3 btn btn-primary w-100 btn-lg "
-								style={{ backgroundColor: "#89592e", borderColor: "#89592e" }}
-							>
-								Cadastrar
-							</button>
-                            </Link>
+							<Link className="text-decoration-none" to="/">
+								<button
+									type="submit"
+									className="mt-3 mb-3 btn btn-primary w-100 btn-lg "
+									style={{ backgroundColor: "#89592e", borderColor: "#89592e" }}
+								>
+									Cadastrar
+								</button>
+							</Link>
 
 							<div className=" text-center">
 								<p className="mb-0" style={{ color: "#000" }}>
