@@ -46,9 +46,10 @@ function ProductPreview({ name, desc, price, img, id, weight, type, amount }) {
 		console.log("Conteúdo do cookie:", Cookies.get("cart"));
 		alert(`${name} adicionado ao carrinho!`);
 	};
+	const productLink = `/product/${id}`;
 	return (
 		<div className="card p-3">
-			<Link to="/">
+			<Link to={productLink}>
 				<img src={img} className="card-img-top" alt={name} />
 			</Link>
 			<div className="card-body text-dark">
