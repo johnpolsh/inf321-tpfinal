@@ -1,7 +1,46 @@
 import { Link } from "react-router-dom";
 import TremExpressoimg from "../assets/TremExpresso.jpg";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Cadastro() {
+	const [users, setUsers] = useState();
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		fetch("http://localhost:3000/users")
+			.then((response) => response.json())
+			.then((data) => {
+				console.log("received data:", data);
+				setUsers(data);
+			})
+			.catch((error) => {
+				console.error(`error: ${error}`);
+			});
+	}, []);
+
+	const handleCadastro = async () => {
+		const email = document.getElementById("inputEmail").value;
+		const password = document.getElementById("inputPassword").value;
+		const street = document.getElementById("inputStreet").value;
+		const cep = document.getElementById("inputCEP").value;
+		const complemento = document.getElementById("inputComplemento").value;
+		const celular = document.getElementById("inputCelular").value;
+		const cpf = document.getElementById("inputCPF").value;
+
+		const newUser = {
+			email,
+			password,
+			street,
+			cep,
+			complemento,
+			celular,
+			cpf,
+		};
+
+		navigate("/", { replace: true });
+	};
+
 	return (
 		<div className="loginpage">
 			<div className="container d-flex align-items-center justify-content-center vh-100">
@@ -114,15 +153,14 @@ function Cadastro() {
 								</div>
 							</div>
 
-							<Link className="text-decoration-none" to="/">
-								<button
-									type="submit"
-									className="mt-3 mb-3 btn btn-primary w-100 btn-lg "
-									style={{ backgroundColor: "#89592e", borderColor: "#89592e" }}
-								>
-									Cadastrar
-								</button>
-							</Link>
+							<button
+								type="submit"
+								className="mt-3 mb-3 btn btn-primary w-100 btn-lg "
+								style={{ backgroundColor: "#89592e", borderColor: "#89592e" }}
+								onClick={handleCadastro}
+							>
+								Cadastrar
+							</button>
 
 							<div className=" text-center">
 								<p className="mb-0" style={{ color: "#000" }}>

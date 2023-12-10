@@ -61,3 +61,13 @@ app.get("/users", async (req, res) => {
 app.listen(port, () => {
 	console.log(`Servidor rodando em http://localhost:${port}`);
 });
+
+async function addUser(user) {
+	console.log("Adding new user to db");
+	const { email, password, street, cep, complemento, celular, cpf } = user;
+	const result = await db.run(
+	  "INSERT INTO users (email, password, adress, cep, complement, phone, cpf) VALUES (?, ?, ?, ?, ?, ?, ?)",
+	  [email, password, street, cep, complemento, celular, cpf]
+	);
+	return result;
+  }
