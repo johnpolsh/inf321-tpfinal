@@ -46,7 +46,7 @@ function CartFooter({ price }) {
 
 			<div className="px-3 my-3 text-center">
 				<div className="cart-item-label">Total a pagar:</div>
-				<span className="text-xl font-weight-medium">R$ {price} </span>
+				<span className="text-xl font-weight-medium">R$ {price.toFixed(2)} </span>
 			</div>
 			<button
 				className="btn btn-primary"

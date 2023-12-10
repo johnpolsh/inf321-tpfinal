@@ -21,6 +21,21 @@ function CartPage() {
 		Cookies.set("cart", JSON.stringify(newCartItems));
 	};
 
+	const updateCartItemQuantity = (index, newQuantity) => {
+		const updatedCartItems = [...cartItems];
+		updatedCartItems[index] = { ...updatedCartItems[index], quantity: newQuantity };
+		setCartItems(updatedCartItems);
+	
+		// Recalcula o preço total após alterar a quantidade do item no carrinho
+		const totalPrice = updatedCartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+		setTotalPrice(totalPrice);
+	
+		Cookies.set("cart", JSON.stringify(updatedCartItems));
+	  };
+	
+	  // Adiciona um novo estado para armazenar o preço total
+	  const [totalPrice, setTotalPrice] = useState(0);
+
 	return (
 		<div>
 			<DefaultLayout>
@@ -32,6 +47,7 @@ function CartPage() {
 					{cartItems.map((item, index) => (
 						<div key={index}>
 							<CartItem
+								qtd={item.qtd}
 								name={item.name}
 								type={'tipo teste'}
 								img={item.img}
@@ -40,13 +56,14 @@ function CartPage() {
 								price={item.price}
 								maxCount={30}
 								onRemove={() => removeCartItem(index)}
+								onQuantityChange={(newQuantity) => updateCartItemQuantity(index, newQuantity)}
 							/>
 						</div>
 					))}
 				</div>
 				<div>
 					<CartFooter
-						price={cartItems.reduce((total, item) => total + item.price, 0)}
+						price={cartItems.reduce((total, item) => total + item.price * item.quantity, 0)}
 					/>
 				</div>
 			</DefaultLayout>

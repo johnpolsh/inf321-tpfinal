@@ -1,9 +1,21 @@
 import { faMinus, faPlus, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cookies from "js-cookie";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 
-function CartItem({ name, type, img, weight, price, discount, maxCount, onRemove}) {
+function CartItem({
+	qtd,
+	name,
+	type,
+	img,
+	weight,
+	price,
+	discount,
+	maxCount,
+	onRemove,
+	onQuantityChange,
+}) {
+
 	const [buyCount, setBuyCount] = useState(1);
 	const [payingPrice, setPayingPrice] = useState(price);
 
@@ -12,6 +24,7 @@ function CartItem({ name, type, img, weight, price, discount, maxCount, onRemove
 			const newCount = buyCount + 1;
 			setBuyCount(newCount);
 			setPayingPrice(newCount * price);
+			onQuantityChange(newCount);
 		}
 	}
 
@@ -20,14 +33,19 @@ function CartItem({ name, type, img, weight, price, discount, maxCount, onRemove
 			const newCount = buyCount - 1;
 			setBuyCount(newCount);
 			setPayingPrice(newCount * price);
+			onQuantityChange();
+			onQuantityChange(newCount);
 		}
 	}
 
 	return (
-		<div className="d-flex flex-column flex-md-row justify-content-between align-items-center bg-white p-3" style={{ borderTop: '2px solid #191918' }}  >
-			<div className="px-3 my-3" >
+		<div
+			className="d-flex flex-column flex-md-row justify-content-between align-items-center bg-white p-3"
+			style={{ borderTop: "2px solid #191918" }}
+		>
+			<div className="px-3 my-3">
 				<a className="d-flex" href="#" style={{ textDecoration: "none" }}>
-					<div className="cart-item-product d-flex mb-2" >
+					<div className="cart-item-product d-flex mb-2">
 						<div
 							className="cart-item-product-thumb align-self-start mr-3"
 							style={{
@@ -102,12 +120,12 @@ function CartItem({ name, type, img, weight, price, discount, maxCount, onRemove
 
 			<div className="px-3 my-3 text-center">
 				<div className="cart-item-label">Subtotal:</div>
-				<span className="text-xl font-weight-medium">R$ {payingPrice}</span>
+				<span className="text-xl font-weight-medium">R$ {payingPrice.toFixed(2)}</span>
 			</div>
 
 			<div className="px-3 my-3 text-center">
 				<div className="cart-item-label">Desconto:</div>
-				<span className="text-xl font-weight-medium">R$ {discount}</span>
+				<span className="text-xl font-weight-medium">R$ {discount.toFixed(2)}</span>
 			</div>
 
 			<button className="btn btn-outline-danger" onClick={onRemove}>

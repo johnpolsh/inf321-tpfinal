@@ -4,21 +4,41 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Rating from "./Rating";
 import Cookies from "js-cookie";
 
-function ProductPreview({ name, desc, price, img }) {
-	const addToCartHandler = () => {
+function ProductPreview({ name, desc, price, img, id }) {
+	function removeAllCookies() {
+		var cookies = document.cookie.split(";");
 
+		for (var i = 0; i < cookies.length; i++) {
+			var cookie = cookies[i];
+			var eqPos = cookie.indexOf("=");
+			var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+			document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+		}
+	}
+
+	const addToCartHandler = () => {
+		removeAllCookies();
 		const cartItem = {
 			name,
 			img,
 			price,
 			desc,
+			id,
+			qtd: 1,
 		};
 
 		const currentCart = JSON.parse(Cookies.get("cart") || "[]");
+		const existingItemIndex = currentCart.findIndex((item) => item.id === id);
 
-		const updatedCart = [...currentCart, cartItem];
+		if (existingItemIndex !== -1) {
+			// Se o item já existe, incrementa a quantidade
+			currentCart[existingItemIndex].qtd += 1;
+		} else {
+			// Se o item não existe, adiciona ao carrinho com qtd igual a 1
+			currentCart.push(cartItem);
+		}
 
-		Cookies.set("cart", JSON.stringify(updatedCart), { expires: 7 });
+		Cookies.set("cart", JSON.stringify(currentCart), { expires: 7 });
 
 		console.log("Conteúdo do cookie:", Cookies.get("cart"));
 		alert(`${name} adicionado ao carrinho!`);
