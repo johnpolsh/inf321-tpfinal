@@ -16,7 +16,7 @@ function CartItem({
 	onQuantityChange,
 }) {
 
-	const [buyCount, setBuyCount] = useState(1);
+	const [buyCount, setBuyCount] = useState(qtd);
 	const [payingPrice, setPayingPrice] = useState(price);
 
 	function incBuyCount() {

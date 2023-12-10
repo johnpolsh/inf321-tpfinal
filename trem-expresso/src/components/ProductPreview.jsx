@@ -17,7 +17,7 @@ function ProductPreview({ name, desc, price, img, id }) {
 	}
 
 	const addToCartHandler = () => {
-		removeAllCookies();
+		//removeAllCookies();
 		const cartItem = {
 			name,
 			img,

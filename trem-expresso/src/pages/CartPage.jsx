@@ -23,11 +23,11 @@ function CartPage() {
 
 	const updateCartItemQuantity = (index, newQuantity) => {
 		const updatedCartItems = [...cartItems];
-		updatedCartItems[index] = { ...updatedCartItems[index], quantity: newQuantity };
+		updatedCartItems[index] = { ...updatedCartItems[index], qtd: newQuantity };
 		setCartItems(updatedCartItems);
 	
 		// Recalcula o preço total após alterar a quantidade do item no carrinho
-		const totalPrice = updatedCartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+		const totalPrice = updatedCartItems.reduce((total, item) => total + item.price * item.qtd, 0);
 		setTotalPrice(totalPrice);
 	
 		Cookies.set("cart", JSON.stringify(updatedCartItems));
@@ -63,7 +63,9 @@ function CartPage() {
 				</div>
 				<div>
 					<CartFooter
-						price={cartItems.reduce((total, item) => total + item.price * item.quantity, 0)}
+						price={cartItems.reduce((total, item) => total + item.price * item.qtd, 0)}
+						
+
 					/>
 				</div>
 			</DefaultLayout>
