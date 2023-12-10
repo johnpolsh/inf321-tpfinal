@@ -39,7 +39,7 @@ function Footer() {
 							</Link>
 						</li>
 						<li className="my-1">
-							<Link className="text-decoration-none small" to="/buy">
+							<Link className="text-decoration-none small" to="/shop">
 								Produtos
 							</Link>
 						</li>
