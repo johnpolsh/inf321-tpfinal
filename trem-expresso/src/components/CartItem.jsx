@@ -1,8 +1,9 @@
 import { faMinus, faPlus, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import Cookies from "js-cookie";
+import React, { useState } from 'react';
 
-function CartItem({ name, type, img, weight, price, discount, maxCount }) {
+function CartItem({ name, type, img, weight, price, discount, maxCount, onRemove}) {
 	const [buyCount, setBuyCount] = useState(1);
 	const [payingPrice, setPayingPrice] = useState(price);
 
@@ -109,7 +110,7 @@ function CartItem({ name, type, img, weight, price, discount, maxCount }) {
 				<span className="text-xl font-weight-medium">R$ {discount}</span>
 			</div>
 
-			<button className="btn btn-outline-danger">
+			<button className="btn btn-outline-danger" onClick={onRemove}>
 				<FontAwesomeIcon icon={faTrashCan} />
 			</button>
 		</div>
