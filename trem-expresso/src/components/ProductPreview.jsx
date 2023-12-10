@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Rating from "./Rating";
 import Cookies from "js-cookie";
 
-function ProductPreview({ name, desc, price, img, id }) {
+function ProductPreview({ name, desc, price, img, id, weight, type, amount }) {
 	function removeAllCookies() {
 		var cookies = document.cookie.split(";");
 
@@ -17,13 +17,16 @@ function ProductPreview({ name, desc, price, img, id }) {
 	}
 
 	const addToCartHandler = () => {
-		//removeAllCookies();
+		removeAllCookies();
 		const cartItem = {
 			name,
 			img,
 			price,
 			desc,
 			id,
+			weight,
+			amount, 
+			type,
 			qtd: 1,
 		};
 

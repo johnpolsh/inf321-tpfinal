@@ -41,7 +41,10 @@ function Shop() {
 										name={el.name}
 										desc={el.desc}
 										price={el.price}
-										img={el.img} 
+										img={el.img}
+										weight={el.weight}
+										type={el.type}
+										amount={el.amount}
 										id = {el.id}/>
 								</div>
 							);

@@ -49,12 +49,12 @@ function CartPage() {
 							<CartItem
 								qtd={item.qtd}
 								name={item.name}
-								type={'tipo teste'}
+								type={item.type}
 								img={item.img}
-								weight={500}
+								weight={item.weight}
 								discount={0}
 								price={item.price}
-								maxCount={30}
+								maxCount={item.amount}
 								onRemove={() => removeCartItem(index)}
 								onQuantityChange={(newQuantity) => updateCartItemQuantity(index, newQuantity)}
 							/>
