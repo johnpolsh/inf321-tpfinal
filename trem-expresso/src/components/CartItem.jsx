@@ -23,10 +23,10 @@ function CartItem({ name, type, img, weight, price, discount, maxCount }) {
 	}
 
 	return (
-		<div className="d-flex flex-column flex-md-row justify-content-between align-items-center bg-white rounded p-3">
-			<div className="px-3 my-3">
+		<div className="d-flex flex-column flex-md-row justify-content-between align-items-center bg-white p-3" style={{ borderTop: '2px solid #191918' }}  >
+			<div className="px-3 my-3" >
 				<a className="d-flex" href="#" style={{ textDecoration: "none" }}>
-					<div className="cart-item-product d-flex mb-2">
+					<div className="cart-item-product d-flex mb-2" >
 						<div
 							className="cart-item-product-thumb align-self-start mr-3"
 							style={{
@@ -58,7 +58,7 @@ function CartItem({ name, type, img, weight, price, discount, maxCount }) {
 				</a>
 			</div>
 
-			<div className="px-3 my-3 text-center">
+			<div className="px-3 my-3 text-center" >
 				<div className="cart-item-label">Quantidade</div>
 				<div className="count-input ">
 					<div className="input-group">

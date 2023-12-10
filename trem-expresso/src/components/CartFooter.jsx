@@ -15,7 +15,7 @@ function CartFooter({ price }) {
 	};
 
 	return (
-		<div className="d-flex flex-column flex-md-row justify-content-between align-items-center bg-white rounded p-3">
+		<div className="d-flex flex-column flex-md-row justify-content-between align-items-center bg-white p-3" style={{ borderTop: '2px solid #191918' }}>
 			<div className="px-3 my-3 text-center">
 				<div className="cart-item-label">
 					<div className="input-group">

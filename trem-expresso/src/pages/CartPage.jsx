@@ -9,10 +9,10 @@ function CartPage() {
 	return (
 		<div >
 			<DefaultLayout>
-				<div className="p-3">
+				<div >
 				<CartHeader />
 				</div>
-				<div className="p-3">
+				<div >
 				<CartItem
 					name={"Cafe Italiano"}
 					type={"Cafe Arabico"}
@@ -23,7 +23,7 @@ function CartPage() {
 					maxCount={230}
 				/>
 				</div>
-				<div className="p-3">
+				<div >
 				<CartItem
 					name={"Cafe Italiano"}
 					type={"Cafe Arabico"}
@@ -34,7 +34,7 @@ function CartPage() {
 					maxCount={230}
 				/>
 				</div>
-				<div className="p-3">
+				<div >
 				<CartFooter price={1200.59} />
 				</div>
 			</DefaultLayout>
