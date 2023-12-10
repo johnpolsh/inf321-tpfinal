@@ -1,7 +1,42 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import TremExpressoimg from "../assets/TremExpresso.jpg";
+import { useEffect, useState } from "react";
 
 function Login() {
+	const [users, setUsers] = useState();
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		fetch("http://localhost:3000/users")
+			.then((response) => response.json())
+			.then((data) => {
+				console.log("received data:", data);
+				setUsers(data);
+			})
+			.catch((error) => {
+				console.error(`error: ${error}`);
+			});
+	}, []);
+
+	const handleLogin = async () => {
+		const email = document.getElementById("inputEmail").value;
+		const password = document.getElementById("inputPassword").value;
+		const user = users.find((user) => user.email === email);
+
+		if (user) {
+			// Verificar se a senha corresponde
+			if (user.password === password) {
+				console.log("Login bem-sucedido!");
+				navigate("/", { replace: true });
+			} else {
+				alert("Senha incorreta");
+			}
+		} else {
+			alert("Usuário não encontrado");
+		}
+	};
+
 	return (
 		<div className="loginpage">
 			<div className="container d-flex align-items-center justify-content-center vh-100">
@@ -50,15 +85,14 @@ function Login() {
 								/>
 							</div>
 
-							<Link className="text-decoration-none" to="/">
-								<button
-									type="submit"
-									className="mt-3 mb-3 btn btn-primary w-100 btn-lg "
-									style={{ backgroundColor: "#89592e", borderColor: "#89592e" }}
-								>
-									Entrar
-								</button>
-							</Link>
+							<button
+								type="submit"
+								className="mt-3 mb-3 btn btn-primary w-100 btn-lg "
+								style={{ backgroundColor: "#89592e", borderColor: "#89592e" }}
+								onClick={handleLogin}
+							>
+								Entrar
+							</button>
 
 							<div className="d-flex mb-5">
 								<div>

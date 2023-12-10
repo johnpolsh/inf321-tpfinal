@@ -43,10 +43,20 @@ async function quertyProdList() {
 	return await db.all("SELECT * FROM prodList");
 }
 
+async function queryUsers() {
+	console.log("query user list from db");
+	return await db.all("SELECT * FROM users");
+  }
+
 app.get("/prodList", async (req, res) => {
 	console.log(`requisition recived on '/prodList' from: ${req.socket.remoteAddress}`);
 	await quertyProdList().then((result) => res.json(result));
 });
+
+app.get("/users", async (req, res) => {
+	console.log(`requisition received on '/users' from: ${req.socket.remoteAddress}`);
+	await queryUsers().then((result) => res.json(result));
+  });
 
 app.listen(port, () => {
 	console.log(`Servidor rodando em http://localhost:${port}`);
