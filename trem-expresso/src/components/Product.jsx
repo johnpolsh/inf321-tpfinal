@@ -5,7 +5,8 @@ import Cookies from "js-cookie";
 
 function Product({ name, desc, price, imgs, id, weight, type, amount }) {
 	const getValorOriginal = () => {
-		return price * 1.2;
+		const randomMultiplier = 1 + Math.random();
+		return price * randomMultiplier;
 	};
 	const valorOriginal = getValorOriginal();
 	const [activeIndex, setActiveIndex] = useState(0);
