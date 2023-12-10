@@ -55,6 +55,7 @@ function CartPage() {
 								discount={0}
 								price={item.price}
 								maxCount={item.amount}
+								id={item.id}
 								onRemove={() => removeCartItem(index)}
 								onQuantityChange={(newQuantity) => updateCartItemQuantity(index, newQuantity)}
 							/>

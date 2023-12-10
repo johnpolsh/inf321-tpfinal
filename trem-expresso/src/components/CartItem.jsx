@@ -2,7 +2,7 @@ import { faMinus, faPlus, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cookies from "js-cookie";
 import React, { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 function CartItem({
 	qtd,
 	name,
@@ -12,6 +12,7 @@ function CartItem({
 	price,
 	discount,
 	maxCount,
+	id,
 	onRemove,
 	onQuantityChange,
 }) {
@@ -37,13 +38,14 @@ function CartItem({
 			onQuantityChange(newCount);
 		}
 	}
-
+	const productLink = `/product/${id}`;
 	return (
 		<div
 			className="d-flex flex-column flex-md-row justify-content-between align-items-center bg-white p-3"
 			style={{ borderTop: "2px solid #191918" }}
 		>
 			<div className="px-3 my-3">
+			<Link to={productLink} style={{textDecoration: "none"}}>
 				<a className="d-flex" href="#" style={{ textDecoration: "none" }}>
 					<div className="cart-item-product d-flex mb-2">
 						<div
@@ -54,6 +56,7 @@ function CartItem({
 								marginRight: "15px",
 							}}
 						>
+							
 							<img
 								style={{
 									width: "100%",
@@ -63,6 +66,7 @@ function CartItem({
 								src={img}
 								alt={name}
 							/>
+							
 						</div>
 						<div className="cart-item-product-info d-flex flex-column justify-content-start">
 							<h4 className="cart-item-product-title">{name}</h4>
@@ -75,6 +79,7 @@ function CartItem({
 						</div>
 					</div>
 				</a>
+				</Link>
 			</div>
 
 			<div className="px-3 my-3 text-center" >

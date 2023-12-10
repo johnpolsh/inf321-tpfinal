@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import TremExpressoimg from "../assets/TremExpresso.jpg";
 import React, { useState, useEffect } from "react";
+import Cookies from "js-cookie";
 
 function Product({ name, desc, price, imgs, id, weight, type, amount }) {
 	const getValorOriginal = () => {
@@ -19,6 +20,38 @@ function Product({ name, desc, price, imgs, id, weight, type, amount }) {
 		setActiveIndex((prevIndex) =>
 			prevIndex === imgs.length - 1 ? 0 : prevIndex + 1
 		);
+	};
+
+	const addToCartHandler = () => {
+		//removeAllCookies();
+		var img = imgs[0];
+		const cartItem = {
+			name,
+			img,
+			price,
+			desc,
+			id,
+			weight,
+			amount,
+			type,
+			qtd: 1,
+		};
+
+		const currentCart = JSON.parse(Cookies.get("cart") || "[]");
+		const existingItemIndex = currentCart.findIndex((item) => item.id === id);
+
+		if (existingItemIndex !== -1) {
+			// Se o item já existe, incrementa a quantidade
+			currentCart[existingItemIndex].qtd += 1;
+		} else {
+			// Se o item não existe, adiciona ao carrinho com qtd igual a 1
+			currentCart.push(cartItem);
+		}
+
+		Cookies.set("cart", JSON.stringify(currentCart), { expires: 7 });
+
+		console.log("Conteúdo do cookie:", Cookies.get("cart"));
+		alert(`${name} adicionado ao carrinho!`);
 	};
 
 	return (
@@ -137,6 +170,7 @@ function Product({ name, desc, price, imgs, id, weight, type, amount }) {
 							type="submit"
 							className="mt-5 btn btn-primary w-100 btn-lg"
 							style={{ backgroundColor: "red", borderColor: "red" }}
+							onClick={addToCartHandler}
 						>
 							Adicionar ao Carrinho
 						</button>
