@@ -27,6 +27,7 @@ function Cadastro() {
 		const complemento = document.getElementById("inputComplemento").value;
 		const celular = document.getElementById("inputCelular").value;
 		const cpf = document.getElementById("inputCPF").value;
+		const user = users.find((user) => user.email === email);
 
 		const newUser = {
 			email,
@@ -38,7 +39,14 @@ function Cadastro() {
 			cpf,
 		};
 
-		navigate("/", { replace: true });
+
+		if (user) {
+			console.log("email ja cadastrado");
+		} else {
+			console.log("add use bd");
+			navigate("/", { replace: true });
+		}
+
 	};
 
 	return (
@@ -61,10 +69,10 @@ function Cadastro() {
 							CADASTRE-SE
 						</h1>
 
-						<form>
+						<form action="http://localhost:3000/addUser" method="POST">
 							<div className="mb-2 mt-3">
 								<label
-									htmlFor="inputEmail"
+									htmlFor="email"
 									className="form-label"
 									style={{ backgroundColor: "white" }}
 								>
@@ -74,53 +82,58 @@ function Cadastro() {
 									type="email"
 									className="form-control"
 									id="inputEmail"
+                                    name="email"
 									style={{ backgroundColor: "white" }}
 								/>
 							</div>
 							<div className="mb-2">
-								<label htmlFor="inputPassword" className="form-label">
+								<label htmlFor="password" className="form-label">
 									Senha
 								</label>
 								<input
 									type="password"
 									className="form-control"
 									id="inputPassword"
+									name="password"
 									style={{ backgroundColor: "white" }}
 								/>
 							</div>
 							<div className="mb-2">
-								<label htmlFor="inputStreet" className="form-label">
+								<label htmlFor="street" className="form-label">
 									Rua e Número
 								</label>
 								<input
 									type="text"
 									className="form-control"
 									id="inputStreet"
+									name="street"
 									style={{ backgroundColor: "white" }}
 								/>
 							</div>
 
 							<div className="mb-2 row">
 								<div className="col">
-									<label htmlFor="inputCEP" className="form-label">
+									<label htmlFor="cep" className="form-label">
 										CEP
 									</label>
 									<input
 										type="text"
 										className="form-control"
 										id="inputCEP"
+										name="cep"
 										style={{ backgroundColor: "white" }}
 										pattern="[0-9]*"
 									/>
 								</div>
 								<div className="col">
-									<label htmlFor="inputNumber" className="form-label">
+									<label htmlFor="complemento" className="form-label">
 										Complemento
 									</label>
 									<input
 										type="text"
 										className="form-control"
 										id="inputComplemento"
+										name="complemento"
 										style={{ backgroundColor: "white" }}
 									/>
 								</div>
@@ -128,25 +141,27 @@ function Cadastro() {
 
 							<div className="mb-2 row">
 								<div className="col">
-									<label htmlFor="inputNumber" className="form-label">
+									<label htmlFor="number" className="form-label">
 										Celular
 									</label>
 									<input
 										type="text"
 										className="form-control"
-										id="inputCelular"
+										id="inputNumber"
+										name="number"
 										style={{ backgroundColor: "white" }}
 										pattern="[0-9]*"
 									/>
 								</div>
 								<div className="col">
-									<label htmlFor="inputCEP" className="form-label">
+									<label htmlFor="cpf" className="form-label">
 										CPF
 									</label>
 									<input
 										type="text"
 										className="form-control"
 										id="inputCPF"
+										name="cpf"
 										style={{ backgroundColor: "white" }}
 										pattern="[0-9]*"
 									/>
@@ -157,7 +172,7 @@ function Cadastro() {
 								type="submit"
 								className="mt-3 mb-3 btn btn-primary w-100 btn-lg "
 								style={{ backgroundColor: "#89592e", borderColor: "#89592e" }}
-								onClick={handleCadastro}
+								// onClick={handleCadastro}
 							>
 								Cadastrar
 							</button>

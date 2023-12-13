@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import express from "express";
 import cors from "cors";
+import bodyParser from "body-parser";
 
 sqlite3.verbose();
 
@@ -14,6 +15,8 @@ const databaseDir = "./db";
 const app = express();
 app.use(cors());
 const port = 3000;
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const [db] = await Promise.all([
 	open({
@@ -46,28 +49,36 @@ async function quertyProdList() {
 async function queryUsers() {
 	console.log("query user list from db");
 	return await db.all("SELECT * FROM users");
-  }
+}
+
+async function addUser({ email, password, street, cep, complemento, number, cpf }) {
+	console.log("Adding new user to db");
+    const querty = `INSERT INTO users (email, password, adress, cep, complement, phone, cpf) VALUES ('${email}', ${password}, ${street}, ${cep}, ${complemento}, ${number}, ${cpf})`
+	const result = await db.run(querty);
+	return result;
+}
 
 app.get("/prodList", async (req, res) => {
-	console.log(`requisition recived on '/prodList' from: ${req.socket.remoteAddress}`);
+	console.log(
+		`requisition recived on '/prodList' from: ${req.socket.remoteAddress}`
+	);
 	await quertyProdList().then((result) => res.json(result));
 });
 
 app.get("/users", async (req, res) => {
-	console.log(`requisition received on '/users' from: ${req.socket.remoteAddress}`);
+	console.log(
+		`requisition received on '/users' from: ${req.socket.remoteAddress}`
+	);
 	await queryUsers().then((result) => res.json(result));
-  });
+});
+
+app.post("/addUser", (req, res) => {
+    const data = req.body;
+	console.log(`requisition received on '/addUser' from: ${req.socket.remoteAddress}`);
+    addUser(data).catch(reason => console.log(reason));
+    res.redirect("back");
+});
 
 app.listen(port, () => {
 	console.log(`Servidor rodando em http://localhost:${port}`);
 });
-
-async function addUser(user) {
-	console.log("Adding new user to db");
-	const { email, password, street, cep, complemento, celular, cpf } = user;
-	const result = await db.run(
-	  "INSERT INTO users (email, password, adress, cep, complement, phone, cpf) VALUES (?, ?, ?, ?, ?, ?, ?)",
-	  [email, password, street, cep, complemento, celular, cpf]
-	);
-	return result;
-  }
