@@ -1,4 +1,4 @@
-# Trem Expresso Cafés
+# Trem Expresso Cafés 🚂☕️
 ## Descrição do Projeto
 Bem-vindo ao Trem Expresso Cafés, o site desenvolvido como trabalho final da disciplina INF 321 - Projeto e Desenvolvimento de Sistemas Web. Este projeto tem como objetivo aplicar os conhecimentos adquiridos ao longo do curso, proporcionando uma experiência prática na criação de sistemas web.
 
@@ -11,3 +11,36 @@ Bem-vindo ao Trem Expresso Cafés, o site desenvolvido como trabalho final da di
 - Front-end: React, Boostrap 5
 - Back-end: Node.js, Express
 - Banco de Dados: SQLite
+
+## Instalação do projeto
+Este tutorial irá guiá-lo através do processo de instalação do projeto Trem Expresso Cafés em seu ambiente local. Certifique-se de ter o [Node.js](https://nodejs.org/) instalado antes de começar.
+1. Clone o Repositório
+    Abra seu terminal e execute o seguinte comando para clonar o repositório para o seu ambiente local:
+    `bash
+    git clone https://github.com/johnpolsh/inf321-tpfinal.git
+    `
+2. Acesse o Diretório
+    Navegue até o diretório do projeto usando o comando:
+    `bash
+    cd inf321-tpfinal/trem-expresso
+    `
+3. Instale as Dependências
+    Você pode usar o commando:
+    `bash
+    yarn install
+    `
+    ou
+    `bash
+    npm install
+    `
+4. Inicie o servidor
+    Execute o seguinte comando para iniciar o servidor:
+    `bash
+    yarn dev
+    `
+    ou
+    `bash
+    npm run dev
+    `
+5. Acesse o site
+    Abra seu navegador e acesse http://localhost:3000 para ver o Trem Expresso Cafés em ação.
