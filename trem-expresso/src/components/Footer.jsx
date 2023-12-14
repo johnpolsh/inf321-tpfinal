@@ -23,9 +23,9 @@ function Footer() {
 					<ul className="list-unstyled ps-4">
 						<li>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. Created by{" "}
-								<strong>H3nriqu3 & Johnpolsh</strong>
+								Projeto final de INF 321.
+                                Created by
+								<strong>H3nriqu3L & Johnpolsh</strong>
 							</p>
 						</li>
 					</ul>
@@ -62,7 +62,7 @@ function Footer() {
 						</li>
 						<li className="list-inline-item px-2">
 							<a
-								href="https://instagram.com"
+								href="https://instagram.com/henrique_l2801/"
 								rel="noreferrer"
 								target="_blank">
 								<FontAwesomeIcon

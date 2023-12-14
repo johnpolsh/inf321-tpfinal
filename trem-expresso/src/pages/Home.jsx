@@ -31,28 +31,27 @@ function Home() {
 					</a>
 				</div>
 				<div id="ourProducts" className="p-3">
-					<h2 className="ms-4">Nossos produtos</h2>
 					<CoffeeProduct
 						name={"Cafés Gourmets"}
-						desc={"Qualidade e tradição"}
+						desc={"Sabor e garbo"}
 						content={
-							"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar justo non tincidunt tempor. Suspendisse eu dolor sed enim lacinia fermentum eu in orci. Vestibulum porta eu nisi et condimentum. Aliquam accumsan viverra nisl, id iaculis metus eleifend nec. Sed in velit in ligula dignissim ultrices id vitae purus. Proin vestibulum viverra tristique. Mauris at sem convallis, efficitur mauris ac, accumsan sem. Nam eu faucibus enim. Nulla ut vehicula mi. Aliquam vestibulum auctor lectus. Etiam eget ex tristique, dictum leo quis, aliquam massa."
+							"Nossos cafés gourmets são cuidadosamente selecionados a partir dos grãos mais finos, cultivados em regiões exuberantes e propícias para a produção de café de alta qualidade. Cada etapa do processo, desde o cultivo até a torra, é executada com maestria, resultando em uma experiência única de sabor e aroma. Os cafés gourmets são conhecidos por suas notas distintas, que variam de frutadas e florais a notas de chocolate e especiarias, proporcionando uma viagem gustativa inigualável."
 						}
                         img={gourmet}
 					/>
 					<CoffeeProduct
 						name={"Cafés Especiais"}
-						desc={"Neque porro quisquam est qui dolorem ipsum"}
+						desc={"Qualidade e robustez"}
 						content={
-							"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar justo non tincidunt tempor. Suspendisse eu dolor sed enim lacinia fermentum eu in orci. Vestibulum porta eu nisi et condimentum. Aliquam accumsan viverra nisl, id iaculis metus eleifend nec. Sed in velit in ligula dignissim ultrices id vitae purus. Proin vestibulum viverra tristique. Mauris at sem convallis, efficitur mauris ac, accumsan sem. Nam eu faucibus enim. Nulla ut vehicula mi. Aliquam vestibulum auctor lectus. Etiam eget ex tristique, dictum leo quis, aliquam massa."
+							"Explore o extraordinário com nossos cafés especiais, uma seleção cuidadosa que reflete o ápice da arte cafeeira. Cada xícara é uma experiência única, criada a partir de grãos raros cultivados em locais exclusivos ao redor do mundo. A torrefação artesanal eleva esses grãos a um patamar superior, realçando perfis de sabor complexos e aromas irresistíveis."
 						}
                         img={especiais}
 					/>
 					<CoffeeProduct
 						name={"Tradicionais"}
-						desc={"Neque porro quisquam est qui dolorem ipsum"}
+						desc={"Tradição e simplicidade"}
 						content={
-							"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar justo non tincidunt tempor. Suspendisse eu dolor sed enim lacinia fermentum eu in orci. Vestibulum porta eu nisi et condimentum. Aliquam accumsan viverra nisl, id iaculis metus eleifend nec. Sed in velit in ligula dignissim ultrices id vitae purus. Proin vestibulum viverra tristique. Mauris at sem convallis, efficitur mauris ac, accumsan sem. Nam eu faucibus enim. Nulla ut vehicula mi. Aliquam vestibulum auctor lectus. Etiam eget ex tristique, dictum leo quis, aliquam massa."
+							"Nossos cafés tradicionais são cultivados com cuidado, colhidos à mão e preparados para oferecer uma experiência única. Nossa busca pela qualidade começa nas fazendas, combinando solo fértil e práticas sustentáveis. Do cultivo à colheita manual e à torrefação artesanal, cada etapa é dedicada a garantir que apenas os melhores grãos cheguem à sua xícara."
 						}
                         img={tradional}
 					/>

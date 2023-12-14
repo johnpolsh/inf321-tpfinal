@@ -47,6 +47,7 @@ function ProductPreview({ name, desc, price, img, id, weight, type, amount }) {
 		alert(`${name} adicionado ao carrinho!`);
 	};
 	const productLink = `/product/${id}`;
+	
 	return (
 		<div className="card p-3">
 			<Link to={productLink}  style={{ textDecoration: "none" }}>

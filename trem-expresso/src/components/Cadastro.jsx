@@ -19,36 +19,6 @@ function Cadastro() {
 			});
 	}, []);
 
-	const handleCadastro = async () => {
-		const email = document.getElementById("inputEmail").value;
-		const password = document.getElementById("inputPassword").value;
-		const street = document.getElementById("inputStreet").value;
-		const cep = document.getElementById("inputCEP").value;
-		const complemento = document.getElementById("inputComplemento").value;
-		const celular = document.getElementById("inputCelular").value;
-		const cpf = document.getElementById("inputCPF").value;
-		const user = users.find((user) => user.email === email);
-
-		const newUser = {
-			email,
-			password,
-			street,
-			cep,
-			complemento,
-			celular,
-			cpf,
-		};
-
-
-		if (user) {
-			console.log("email ja cadastrado");
-		} else {
-			console.log("add use bd");
-			navigate("/", { replace: true });
-		}
-
-	};
-
 	return (
 		<div className="loginpage">
 			<div className="container d-flex align-items-center justify-content-center vh-100">
