@@ -31,7 +31,7 @@ function Shop() {
 	return (
 		<>
 			<DefaultLayout>
-				<SearchBar></SearchBar>
+				{/* <SearchBar></SearchBar> */}
 				<div className="container-fluid">
 					<div className="m-auto row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 						{productList.map((el, i) => {
@@ -41,7 +41,7 @@ function Shop() {
 										name={el.name}
 										desc={el.desc}
 										price={el.price}
-										img={el.img}
+										img={`http://localhost:3000/img/${el.img}`}
 										weight={el.weight}
 										type={el.type}
 										amount={el.amount}

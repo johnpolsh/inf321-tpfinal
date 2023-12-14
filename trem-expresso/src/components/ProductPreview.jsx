@@ -49,16 +49,16 @@ function ProductPreview({ name, desc, price, img, id, weight, type, amount }) {
 	const productLink = `/product/${id}`;
 	return (
 		<div className="card p-3">
-			<Link to={productLink}>
+			<Link to={productLink}  style={{ textDecoration: "none" }}>
 				<img src={img} className="card-img-top" alt={name} />
-			</Link>
+			
 			<div className="card-body text-dark">
 				<h4 className="card-title">{name}</h4>
 				<p className="card-text text-truncate">{desc}</p>
 				<h4 className="product-price">R$ {price}</h4>
 				<Rating stars={4} />
 			</div>
-
+			</Link>
 			<button className="btn btn-danger" onClick={addToCartHandler}>
 				Adicionar ao Carrinho
 			</button>

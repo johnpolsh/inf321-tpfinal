@@ -2,7 +2,9 @@ import sqlite3 from "sqlite3";
 import { open } from "sqlite";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
+import fs from "fs";
 import express from "express";
+import multer from "multer";
 import cors from "cors";
 import bodyParser from "body-parser";
 
@@ -17,6 +19,15 @@ app.use(cors());
 const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+const storage = multer.diskStorage({
+	destination: (req, file, cb) => {
+		cb(null, "../assets");
+	},
+	filename: (req, file, cb) => {
+		cb(null, file.originalname);
+	},
+});
 
 const [db] = await Promise.all([
 	open({
@@ -51,9 +62,17 @@ async function queryUsers() {
 	return await db.all("SELECT * FROM users");
 }
 
-async function addUser({ email, password, street, cep, complemento, number, cpf }) {
+async function addUser({
+	email,
+	password,
+	street,
+	cep,
+	complemento,
+	number,
+	cpf,
+}) {
 	console.log("Adding new user to db");
-    const querty = `INSERT INTO users (email, password, adress, cep, complement, phone, cpf) VALUES ('${email}', ${password}, ${street}, ${cep}, ${complemento}, ${number}, ${cpf})`
+	const querty = `INSERT INTO users (email, password, adress, cep, complement, phone, cpf) VALUES ('${email}', ${password}, ${street}, ${cep}, ${complemento}, ${number}, ${cpf})`;
 	const result = await db.run(querty);
 	return result;
 }
@@ -72,11 +91,28 @@ app.get("/users", async (req, res) => {
 	await queryUsers().then((result) => res.json(result));
 });
 
+app.get("/img/:imagem", (req, res) => {
+	const name = req.params.imagem;
+	const path = join(__dirname, "../assets", name);
+	console.log(
+		`requisition received on '/img:${path}' from: ${req.socket.remoteAddress}`
+	);
+	if (fs.existsSync(path)) {
+		const img = fs.readFileSync(path);
+		res.writeHead(200, { "Content-Type": "image/jpeg" });
+		res.end(img, "binary");
+	} else {
+		res.status(404).send("image not found");
+	}
+});
+
 app.post("/addUser", (req, res) => {
-    const data = req.body;
-	console.log(`requisition received on '/addUser' from: ${req.socket.remoteAddress}`);
-    addUser(data).catch(reason => console.log(reason));
-    res.redirect("back");
+	const data = req.body;
+	console.log(
+		`requisition received on '/addUser' from: ${req.socket.remoteAddress}`
+	);
+	addUser(data).catch((reason) => console.log(reason));
+	res.redirect("back");
 });
 
 app.listen(port, () => {

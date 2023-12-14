@@ -1,10 +1,9 @@
 import CartItem from "../components/CartItem";
 import CartFooter from "../components/CartFooter";
 import CartHeader from "../components/CartHeader";
-import TremExpressoimg from "../assets/TremExpresso.jpg";
 import Cookies from "js-cookie";
 import DefaultLayout from "../layouts/Default";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 function CartPage() {
 	const [cartItems, setCartItems] = useState([]);
@@ -15,7 +14,9 @@ function CartPage() {
 	}, []);
 
 	const removeCartItem = (indexToRemove) => {
-		const newCartItems = cartItems.filter((_, index) => index !== indexToRemove);
+		const newCartItems = cartItems.filter(
+			(_, index) => index !== indexToRemove
+		);
 		setCartItems(newCartItems);
 
 		Cookies.set("cart", JSON.stringify(newCartItems));
@@ -23,18 +24,24 @@ function CartPage() {
 
 	const updateCartItemQuantity = (index, newQuantity) => {
 		const updatedCartItems = [...cartItems];
-		updatedCartItems[index] = { ...updatedCartItems[index], qtd: newQuantity };
+		updatedCartItems[index] = {
+			...updatedCartItems[index],
+			qtd: newQuantity,
+		};
 		setCartItems(updatedCartItems);
-	
+
 		// Recalcula o preço total após alterar a quantidade do item no carrinho
-		const totalPrice = updatedCartItems.reduce((total, item) => total + item.price * item.qtd, 0);
+		const totalPrice = updatedCartItems.reduce(
+			(total, item) => total + item.price * item.qtd,
+			0
+		);
 		setTotalPrice(totalPrice);
-	
+
 		Cookies.set("cart", JSON.stringify(updatedCartItems));
-	  };
-	
-	  // Adiciona um novo estado para armazenar o preço total
-	  const [totalPrice, setTotalPrice] = useState(0);
+	};
+
+	// Adiciona um novo estado para armazenar o preço total
+	const [totalPrice, setTotalPrice] = useState(0);
 
 	return (
 		<div>
@@ -57,16 +64,19 @@ function CartPage() {
 								maxCount={item.amount}
 								id={item.id}
 								onRemove={() => removeCartItem(index)}
-								onQuantityChange={(newQuantity) => updateCartItemQuantity(index, newQuantity)}
+								onQuantityChange={(newQuantity) =>
+									updateCartItemQuantity(index, newQuantity)
+								}
 							/>
 						</div>
 					))}
 				</div>
 				<div>
 					<CartFooter
-						price={cartItems.reduce((total, item) => total + item.price * item.qtd, 0)}
-						
-
+						price={cartItems.reduce(
+							(total, item) => total + item.price * item.qtd,
+							0
+						)}
 					/>
 				</div>
 			</DefaultLayout>

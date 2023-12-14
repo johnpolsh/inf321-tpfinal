@@ -46,12 +46,7 @@ function ProdPage() {
 				name={firstProd.name}
 				desc={firstProd.desc}
 				price={firstProd.price}
-				imgs={[
-					TremExpressoImg1,
-					TremExpressoImg2,
-					TremExpressoImg3,
-					TremExpressoImg4,
-				]}
+				img={`http://localhost:3000/img/${firstProd.img}`}
 				id={firstProd.id}
 				weight={firstProd.weight}
 				type={firstProd.type}

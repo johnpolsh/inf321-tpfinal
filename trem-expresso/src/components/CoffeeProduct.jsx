@@ -1,9 +1,10 @@
-import TremExpressoImg from "../assets/TremExpresso.jpg";
-
-function CoffeeProduct({ name, desc, content }) {
+function CoffeeProduct({ name, desc, content, img }) {
 	return (
 		<div className="coffee-product">
-			<div className="coffee-figure-info">
+			<div className="d-none d-sm-flex position-absolute bottom-0 end-0 w-75 h-100 justify-end">
+				<img src={img} alt={name} className="img-fluid rounded-start h-100" />
+			</div>
+			<div className="coffee-figure-info zindex-modal">
 				<figure>
 					<h4>{name}</h4>
 					<figcaption className="blockquote-footer">
@@ -11,14 +12,6 @@ function CoffeeProduct({ name, desc, content }) {
 					</figcaption>
 					<p>{content}</p>
 				</figure>
-			</div>
-			<div className="d-none d-sm-block position-absolute bottom-0 end-0 w-75 h-100">
-				<div
-                className="w-100 h-100"
-					style={{
-						backgroundColor: "#eeeeee0f",
-					}}>
-				</div>
 			</div>
 		</div>
 	);
