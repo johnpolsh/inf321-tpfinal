@@ -1,6 +1,6 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 // import TremExpressoImg from "../assets/TremExpresso.jpg";
 
@@ -14,42 +14,38 @@ function NavBar() {
 						alt="Trem Expresso imagem"
 						style={{ width: "48px", height: "auto" }}
 					/> */}
-                    <h3>Trem Expresso Cafés</h3>
+					<h3>Trem Expresso Cafés</h3>
 				</Link>
-				
-				<div style={{width: '19%'}}  className="nav-item mx-auto">
-                <Link   className="text-decoration-none " to="/shop">
-					Nossa loja
-				</Link>
+
+				<div style={{ width: "19%" }} className="nav-item mx-auto">
+					<Link className="text-decoration-none " to="/shop">
+						Nossa loja
+					</Link>
 				</div>
-			
-				
+
 				<div className="text-decoration-none  justify-content-right">
-				<a
-						className="nav-link "
-						href="#"
-						role="button"
-						
-					>	
-					<FontAwesomeIcon style={{ marginRight: '20px'}}  icon={faCartShopping} />
-				</a>
-				</div>
-				
-				
-				<div className="nav-item dropdown me-5">
-					
-					<a
-						// className="nav-link dropdown-toggle"
-						// href="#"
-						// role="button"
-						// data-bs-toggle="dropdown"
-						// aria-expanded="false"
-						// aria-haspopup="true"
-					>	
-						<Link to="/login">
-						<FontAwesomeIcon icon={faUser} />
+					<a className="nav-link " href="#" role="button">
+						<Link to="/cart">
+							<FontAwesomeIcon
+								style={{ marginRight: "20px" }}
+								icon={faCartShopping}
+							/>
 						</Link>
-						
+					</a>
+				</div>
+
+				<div className="nav-item dropdown me-5">
+					<a
+					// className="nav-link dropdown-toggle"
+					// href="#"
+					// role="button"
+					// data-bs-toggle="dropdown"
+					// aria-expanded="false"
+					// aria-haspopup="true"
+					>
+						<Link to="/login">
+							<FontAwesomeIcon icon={faUser} />
+						</Link>
 					</a>
 					{/* <div className="dropdown-menu dropdown-menu-end">
 						<form
@@ -66,10 +62,7 @@ function NavBar() {
 						</form>
 						
 					</div> */}
-					
 				</div>
-				
-				
 			</div>
 		</nav>
 	);

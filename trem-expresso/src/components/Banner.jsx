@@ -1,6 +1,13 @@
 function Banner({ images }) {
 	return (
-		<div id="banner-liquour" className="carousel slide" data-bs-ride="carousel">
+		<div
+			id="banner-liquour"
+			className="carousel slide"
+			data-bs-ride="carousel"
+			style={{
+				background:
+					"linear-gradient(0deg, rgba(15, 15, 14, 1) 0%, rgba(43, 18, 0, 1) 40%)",
+			}}>
 			<div className="carousel-indicators">
 				<button
 					type="button"
@@ -22,15 +29,21 @@ function Banner({ images }) {
 					}
 				})}
 			</div>
-			<div className="carousel-inner" style={{height: "75vh"}}>
+			<div className="carousel-inner" style={{ height: "75vh" }}>
 				<div className="carousel-item active">
-					<img src={images[0]} className="d-block max-w-100 vh-100 mx-auto" />
+					<img
+						src={images[0]}
+						className="d-block max-w-100 vh-100 mx-auto"
+					/>
 				</div>
 				{images.map((img, i) => {
 					if (i > 0) {
 						return (
 							<div key={i} className="carousel-item">
-								<img src={img} className="d-block max-w-100 vh-100 mx-auto" />
+								<img
+									src={img}
+									className="d-block max-w-100 vh-100 mx-auto"
+								/>
 							</div>
 						);
 					}
